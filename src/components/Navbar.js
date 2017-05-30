@@ -1,30 +1,57 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import {
+  Navbar,
+  Nav,
+  NavItem
+} from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
-class Navbar extends Component {
+class NavbarComponent extends Component {
 
   renderAuthButton() {
     const { isAuth } = this.props;
     if (isAuth) {
       return (
-        <li onClick={() => this.props.logout()}>Logout</li>
+        <NavItem
+          onClick={() => this.props.logout()}
+        >
+          Logout
+        </NavItem>
       );
     }
     return (
-      <li onClick={() => this.props.login()}>Login</li>
+      <NavItem
+        onClick={() => this.props.login()}
+      >
+        Login
+      </NavItem>
     );
   }
 
   render() {
     return (
-      <nav>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/settings">Settings</Link></li>
-        <li><Link to="/profile">Profile</Link></li>
-        {this.renderAuthButton()}
-      </nav>
+      <Navbar collapseOnSelect>
+        <Navbar.Header>
+          <Navbar.Brand>
+            <Link to="/">Home</Link>
+          </Navbar.Brand>
+          <Navbar.Toggle />
+        </Navbar.Header>
+        <Navbar.Collapse>
+          <Nav pullRight>
+            <LinkContainer to="/settings">
+              <NavItem>Settings</NavItem>
+            </LinkContainer>
+            <LinkContainer to="/profile">
+              <NavItem>Profile</NavItem>
+            </LinkContainer>
+            {this.renderAuthButton()}
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     );
   }
 }
 
-export default Navbar;
+export default NavbarComponent;

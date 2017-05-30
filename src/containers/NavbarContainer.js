@@ -20,4 +20,8 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { login, logout })(NavbarContainer);
+// Navbar link active is not working if pure is not set to false
+// TODO: find an alternative solution and remove pure option
+export default connect(mapStateToProps, { login, logout }, null, {
+  pure: false
+})(NavbarContainer);
