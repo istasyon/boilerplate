@@ -14,6 +14,7 @@ class NavbarComponent extends Component {
     if (isAuth) {
       return (
         <NavItem
+          className="Navbar__Brand"
           onClick={() => this.props.logout()}
         >
           Logout
@@ -22,6 +23,7 @@ class NavbarComponent extends Component {
     }
     return (
       <NavItem
+        className="Navbar__Brand"
         onClick={() => this.props.login()}
       >
         Login
@@ -44,10 +46,10 @@ class NavbarComponent extends Component {
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav pullRight>
-            <LinkContainer to="/settings">
+            <LinkContainer className="Navbar__Link" to="/settings">
               <NavItem>Settings</NavItem>
             </LinkContainer>
-            <LinkContainer to="/profile">
+            <LinkContainer className="Navbar__Link" to="/profile">
               <NavItem>Profile</NavItem>
             </LinkContainer>
             {this.renderAuthButton()}
