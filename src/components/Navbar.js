@@ -31,7 +31,10 @@ class NavbarComponent extends Component {
 
   render() {
     return (
-      <Navbar collapseOnSelect>
+      <Navbar
+        className="Navbar" 
+        collapseOnSelect
+      >
         <Navbar.Header>
           <Navbar.Brand>
             <Link to="/">Home</Link>

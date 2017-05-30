@@ -1,0 +1,11 @@
+$test-color: #fff;
+
+body {
+  background-color: #f1f1f1; 
+}
+
+.Navbar {
+  background-color: $test-color;
+  height: 60px;
+  border: 0;
+}
