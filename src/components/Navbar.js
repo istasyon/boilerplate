@@ -32,8 +32,9 @@ class NavbarComponent extends Component {
   render() {
     return (
       <Navbar
-        className="Navbar" 
+        className="Navbar"
         collapseOnSelect
+        fluid
       >
         <Navbar.Header>
           <Navbar.Brand>
